@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>AI Chat Assistant</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Sidebar -->
+    <div class="sidebar">
+      <div class="sidebar-header">
+        <div class="logo">🤖 AI Assistant</div>
+        <button class="new-chat-btn" onclick="newChat()">+ New Chat</button>
+      </div>
+      <div class="chat-history" id="chatHistory">
+        <p class="history-label">Recent Chats</p>
+      </div>
+      <div class="sidebar-footer">
+        <p>Built by Sandra TK</p>
+        <p>SRMIST CSE 2027</p>
+      </div>
+    </div>
+
+    <!-- Main Chat Area -->
+    <div class="main">
+
+      <!-- Header -->
+      <div class="chat-header">
+        <div class="status">
+          <span class="dot"></span>
+          <span>AI Assistant — Online</span>
+        </div>
+        <button class="clear-btn" onclick="clearChat()">Clear Chat</button>
+      </div>
+
+      <!-- Messages -->
+      <div class="messages" id="messages">
+        <div class="welcome">
+          <div class="welcome-icon">🤖</div>
+          <h2>Hello Sandra! 👋</h2>
+          <p>I am your personal AI Assistant. Ask me anything!</p>
+          <div class="suggestions">
+            <button onclick="sendSuggestion('Explain what is Artificial Intelligence')">
+              💡 What is AI?
+            </button>
+            <button onclick="sendSuggestion('What is Internet of Things IoT?')">
+              🌐 What is IoT?
+            </button>
+            <button onclick="sendSuggestion('Give me tips to crack placement interviews')">
+              🎯 Placement Tips
+            </button>
+            <button onclick="sendSuggestion('Explain LinkedList in Java with example')">
+              ☕ Java Help
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Input Area -->
+      <div class="input-area">
+        <div class="input-box">
+          <textarea
+            id="userInput"
+            placeholder="Ask me anything..."
+            rows="1"
+            onkeydown="handleKey(event)"
+            oninput="autoResize(this)"
+          ></textarea>
+          <button class="send-btn" id="sendBtn" onclick="sendMessage()">
+            ➤
+          </button>
+        </div>
+        <p class="disclaimer">AI can make mistakes. Verify important information.</p>
+      </div>
+
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
